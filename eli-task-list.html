@@ -1,5 +1,5 @@
 <link rel="import" href="../polymer/polymer-element.html">
-<link rel="import" href="../bower_component/task-element/eli-task-element.html">
+<link rel="import" href="../task-element/eli-task-element.html">
 
 <dom-module id="eli-task-list">
   <template>
@@ -9,7 +9,9 @@
       }
     </style>
     <h2>Hello [[prop1]]!</h2>
-    <eli-task-element title="Esto es una tarea" key=0></eli-task-element>
+    <template is="dom-repeat" items="[[taskList]]">
+      <eli-task-element title="[[item.title]]" key=[[item.id]] [[item.done]] [[item.cancelled]]></eli-task-element>
+    </template>
   </template>
 
   <script>
@@ -25,9 +27,9 @@
       static get is() { return 'eli-task-list'; }
       static get properties() {
         return {
-          prop1: {
-            type: String,
-            value: 'eli-task-list'
+          taskList: {
+            type: [],
+            value: []
           }
         };
       }

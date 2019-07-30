@@ -22,7 +22,30 @@
       <h3>Basic eli-task-list demo</h3>
       <demo-snippet>
         <template>
-          <eli-task-list></eli-task-list>
+          <eli-task-list id="lista-tareas"></eli-task-list>
+          <script>
+           var lista = document.getElementById('lista-tareas');
+           lista.taskList = [
+             {
+               id: 0,
+               title: "Esto es una tarea",
+               cancelled: true,
+               done: true
+             },
+             {
+               id: 0,
+               title: "Esto es una tarea",
+               cancelled: true,
+               done: true
+             },
+             {
+               id: 0,
+               title: "Esto es una tarea",
+               cancelled: true,
+               done: true
+             }];
+           console.log(typeof list);
+          </script>
         </template>
       </demo-snippet>
     </div>
