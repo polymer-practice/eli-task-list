@@ -1,0 +1,38 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../bower_component/task-element/eli-task-element.html">
+
+<dom-module id="eli-task-list">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+    <eli-task-element title="Esto es una tarea" key=0></eli-task-element>
+  </template>
+
+  <script>
+    /**
+     * `eli-task-list`
+     *
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class EliTaskList extends Polymer.Element {
+      static get is() { return 'eli-task-list'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'eli-task-list'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(EliTaskList.is, EliTaskList);
+  </script>
+</dom-module>
