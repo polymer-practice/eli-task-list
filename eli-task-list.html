@@ -8,9 +8,8 @@
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]!</h2>
     <template is="dom-repeat" items="[[taskList]]">
-      <eli-task-element title="[[item.title]]" key=[[item.id]] [[item.done]] [[item.cancelled]]></eli-task-element>
+      <eli-task-element title="[[item.title]]" key=[[item.id]] done=[[item.done]] cancelled=[[item.cancelled]]></eli-task-element>
     </template>
   </template>
 
@@ -28,7 +27,7 @@
       static get properties() {
         return {
           taskList: {
-            type: [],
+            type: Array,
             value: []
           }
         };
